@@ -1,0 +1,25 @@
+.toolbar nav {
+  text-align: center;
+  line-height: 50px;
+  background-color: #c7d5d6;
+  opacity: 0.6;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.toolbar li {
+  display: inline-block;
+  padding: 0 1rem;
+  list-style: none;
+}
+
+.toolbar li a{
+  color: black;
+  text-decoration: none;
+}
+
+.toolbar li a:hover{
+  text-decoration: underline;
+}
