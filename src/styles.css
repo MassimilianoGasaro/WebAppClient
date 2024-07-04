@@ -8,3 +8,7 @@
 .top-50 {
   margin-top: 50px;
 }
+
+.main-container {
+  height: calc(100vh - 70px);
+}

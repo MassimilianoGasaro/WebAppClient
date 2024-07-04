@@ -1,0 +1,24 @@
+<div class="table-container">
+  <table class="styled-table">
+      <thead>
+          <tr>
+              <th>Nome</th>
+              <th>Luogo</th>
+              <th>Tipo</th>
+              <th>Costo</th>
+          </tr>
+      </thead>
+      <tbody>
+          @for (expense of expenses(); track expense.id) {
+            <tr [class.active-row]="$index % 2 !== 0">
+              <td>{{ expense.name }}</td>
+              <td>{{ expense.where }}</td>
+              <td>{{ expense.type }}</td>
+              <td>{{ expense.cost }}</td>
+            </tr>
+          } @empty {
+            <tr>There are no items.</tr>
+          }
+      </tbody>
+  </table>
+</div>
