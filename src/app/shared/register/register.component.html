@@ -1,1 +1,32 @@
-<p>register works!</p>
+<form class="form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <div class="input-box">
+    <label for="username">Username:</label>
+    <input class="transparent-input" id="username" type="text" formControlName="userName">
+  </div>
+  <div class="input-box">
+    <label for="email">Email:</label>
+    <input class="transparent-input" id="email" type="email" formControlName="email">
+  </div>
+  <div class="input-box">
+    <label for="password">Password:</label>
+    <input class="transparent-input" id="password" type="password" formControlName="password">
+    <div *ngIf="registerForm.controls['password'].invalid && (registerForm.controls['password'].dirty || registerForm.controls['password'].touched)">
+      <small *ngIf="registerForm.controls['password'].errors?.['required']">Password is required.</small>
+      <small *ngIf="registerForm.controls['password'].errors?.['minlength']">Password must be at least 8 characters long.</small>
+      <small *ngIf="registerForm.controls['password'].errors?.['passwordInvalid']">Password must contain at least one uppercase letter, one lowercase letter, and one special character.</small>
+    </div>
+  </div>
+  <div class="input-box">
+    <label for="confirmPassword">Conferma Password:</label>
+    <input class="transparent-input" id="confirmPassword" type="password" formControlName="confirmPassword">
+    <div *ngIf="registerForm.controls['confirmPassword'].invalid && (registerForm.controls['confirmPassword'].dirty || registerForm.controls['confirmPassword'].touched)">
+      <small *ngIf="registerForm.controls['confirmPassword'].errors?.['required']">Confirm Password is required.</small>
+      <small *ngIf="registerForm.controls['confirmPassword'].errors?.['passwordMismatch']">Passwords do not match.</small>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <button class="cancel" (click)="cancel()">Cancel</button>
+    <button class="confirm" type="submit">Submit</button>
+  </div>
+</form>
