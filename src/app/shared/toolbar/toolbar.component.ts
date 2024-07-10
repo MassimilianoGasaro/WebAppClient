@@ -1,5 +1,6 @@
-import { Component, OutputEmitterRef, output } from '@angular/core';
+import { Component, OutputEmitterRef, inject, output } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -9,12 +10,10 @@ import { RouterModule } from '@angular/router';
   styleUrl: './toolbar.component.css'
 })
 export class ToolbarComponent {
-  toggleRegisterButton: OutputEmitterRef<boolean> = output<boolean>();
 
-  isRegister: boolean = false;
+  authService = inject(AuthService);
 
-  toggleIsRegister() {
-    this.toggleRegisterButton.emit(!this.isRegister);
-    this.isRegister = !this.isRegister;
+  logout() {
+    this.authService.logout();
   }
 }

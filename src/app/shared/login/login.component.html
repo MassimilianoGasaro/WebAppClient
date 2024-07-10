@@ -1,1 +1,23 @@
-<p>login works!</p>
+<div class="login-form">
+  <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="input-box">
+      <label for="username">Username:</label>
+      <input class="transparent-input" id="username" type="text" formControlName="userName">
+      <div *ngIf="loginForm.controls['userName'].invalid && (loginForm.controls['userName'].dirty || loginForm.controls['userName'].touched)">
+        <small *ngIf="loginForm.controls['userName'].errors?.['required']">Username is required.</small>
+      </div>
+    </div>
+    <div class="input-box">
+      <label for="password">Password:</label>
+      <input class="transparent-input" id="password" type="password" formControlName="password">
+      <div *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)">
+        <small *ngIf="loginForm.controls['password'].errors?.['required']">Password is required.</small>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button class="cancel" (click)="cancel()">Cancel</button>
+      <button class="confirm" type="submit">Login</button>
+    </div>
+  </form>
+</div>

@@ -1,17 +1,24 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { RegisterDto } from '../../interfaces/user';
+import { RegisterDto, UserLogin } from '../../interfaces/user';
 import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { AuthService } from '../../services/auth.service';
+import { ToolbarComponent } from '../toolbar/toolbar.component';
+import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, ToolbarComponent],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
 export class RegisterComponent implements OnInit {
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder,
+    private authService: AuthService,
+    private toastr: ToastrService,
+    private router: Router) {}
 
   registerForm: FormGroup = this.formBuilder.nonNullable.group({
     userName: ['', [Validators.required]],
@@ -21,24 +28,34 @@ export class RegisterComponent implements OnInit {
   }, { validators: this.matchPasswords('password', 'confirmPassword') })
 
   ngOnInit(): void {
-    console.log(this.registerForm.status);
-  }
-
-  register(model: RegisterDto) {
-    console.log(model);
   }
 
   cancel() {
-    console.log("cancel");
+    this.registerForm.reset();
   }
 
   onSubmit() {
     if (this.registerForm.valid) {
-      console.log('Form Submitted!', this.registerForm.value);
+      let regDto: RegisterDto = this.registerForm.value;
+      this.register(regDto);
     }
   }
 
   // PRIVATE METHODS
+
+  private register(model: RegisterDto) {
+    this.authService.register(model).subscribe({
+      next: (user: UserLogin) => {
+        this.toastr.success(`${user.userName} registrato con successo!`);
+        this.router.navigate(["homepage"]);
+      },
+      error: err => {
+        console.error(err);
+        this.toastr.error(err.error);
+      }
+    })
+  }
+
   private passwordValidator(control: AbstractControl): ValidationErrors | null {
     const password: string = control.value;
     if (!password) return null;

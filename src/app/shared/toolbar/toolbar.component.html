@@ -4,7 +4,12 @@
       <li><a [routerLink]="['/homepage']">Home</a></li>
       <li><a [routerLink]="['/dashboard']">Dashboard</a></li>
       <li><a [routerLink]="['/settings']">Impostazioni</a></li>
-      <li><a (click)="toggleIsRegister()">Registrati</a></li>
+      @if (authService.currentUserSource()) {
+        <li><a (click)="logout()">Logout</a></li>
+      } @else {
+        <li><a [routerLink]="['/register']">Registrati</a></li>
+        <li><a [routerLink]="['/login']">Accedi</a></li>
+      }
     </ul>
   </nav>
 </div>

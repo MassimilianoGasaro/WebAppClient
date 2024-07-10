@@ -1,0 +1,62 @@
+.login-form {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  width: 30%;
+}
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-box > label {
+  font-size: 14px;
+  color: #cacabf;
+}
+
+.transparent-input {
+  background-color: transparent;
+  outline: none;
+  font-size: 18px;
+  border: none;
+  border-bottom: 1px solid lightgray;
+  padding: 3px 6px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1em;
+  margin: 1.5em 0;
+}
+
+.buttons > button {
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: none;
+  font-size: 18px;
+}
+
+.buttons > .cancel {
+  color: #000;
+  background-color: #c4b9b9;
+  opacity: 0.8;
+}
+
+.buttons > .confirm {
+  background-color: #4aa7eb;
+  color: white;
+  opacity: 0.8;
+}
+
+.buttons > button:hover {
+  cursor: pointer;
+}

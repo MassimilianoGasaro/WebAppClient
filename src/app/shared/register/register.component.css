@@ -1,7 +1,15 @@
+.register-form {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .form {
   display: flex;
   flex-direction: column;
   gap: 1.5em;
+  width: 30%;
 }
 
 .input-box {

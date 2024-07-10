@@ -10,13 +10,15 @@ export type User = {
 }
 
 export type UserLogin = {
-  username: string;
+  userName: string;
   token: string;
 }
 
 export type RegisterDto = {
   username: string;
   password: string;
+  confirmPassword: string;
+  email: string;
 }
 
 export type LoginDto = {

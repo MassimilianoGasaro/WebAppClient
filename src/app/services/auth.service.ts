@@ -2,15 +2,16 @@ import { Injectable, signal } from '@angular/core';
 import { HttpApiService } from './httpApi.service';
 import { LoginDto, RegisterDto, UserLogin } from '../interfaces/user';
 import { Observable, map } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  private currentUserSource = signal<UserLogin | null>(null);
+  public currentUserSource = signal<UserLogin | null>(null);
 
-  constructor(private apiService: HttpApiService) { }
+  constructor(private httpClient: HttpClient, private apiService: HttpApiService) { }
 
   /**
    * login method --> metodo per effettuare il login
@@ -28,7 +29,7 @@ export class AuthService {
   }
 
   public register(userRegister: RegisterDto): Observable<UserLogin> {
-    return this.apiService.post("auth/Login", userLogin).pipe(
+    return this.apiService.post("auth/Register", userRegister).pipe(
       map((response: UserLogin) => {
         const user: UserLogin = response;
         if(user) this.setCurrentUser(user);
