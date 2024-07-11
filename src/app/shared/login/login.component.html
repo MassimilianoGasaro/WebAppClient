@@ -16,8 +16,8 @@
     </div>
 
     <div class="buttons">
-      <button class="cancel" (click)="cancel()">Cancel</button>
-      <button class="confirm" type="submit">Login</button>
+      <button class="cancel" type="button" (click)="cancel()">Cancel</button>
+      <button class="confirm" type="submit" [disabled]="!loginForm.valid">Login</button>
     </div>
   </form>
 </div>

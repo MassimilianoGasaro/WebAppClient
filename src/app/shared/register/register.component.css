@@ -48,15 +48,18 @@
 .buttons > .cancel {
   color: #000;
   background-color: #c4b9b9;
-  opacity: 0.8;
 }
 
 .buttons > .confirm {
   background-color: #4aa7eb;
   color: white;
-  opacity: 0.8;
 }
 
 .buttons > button:hover {
   cursor: pointer;
+}
+
+.buttons > button:hover {
+  cursor: default;
+  opacity: 0.6;
 }

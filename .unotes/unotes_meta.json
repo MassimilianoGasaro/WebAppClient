@@ -1,0 +1,66 @@
+{
+  "name": "",
+  "isOrdered": true,
+  "folders": {
+    "public": {
+      "name": "public",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "src": {
+      "name": "src",
+      "isOrdered": true,
+      "folders": {
+        "app": {
+          "name": "app",
+          "isOrdered": true,
+          "folders": {
+            "components": {
+              "name": "components",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "interceptor": {
+              "name": "interceptor",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "interfaces": {
+              "name": "interfaces",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "services": {
+              "name": "services",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "shared": {
+              "name": "shared",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            }
+          },
+          "files": {}
+        },
+        "environments": {
+          "name": "environments",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        }
+      },
+      "files": {}
+    }
+  },
+  "files": {
+    "README": 1,
+    "todolist": 0
+  }
+}

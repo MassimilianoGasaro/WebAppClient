@@ -27,8 +27,8 @@
     </div>
 
     <div class="buttons">
-      <button class="cancel" (click)="cancel()">Cancel</button>
-      <button class="confirm" type="submit">Register</button>
+      <button class="cancel" type="button" (click)="cancel()">Cancel</button>
+      <button class="confirm" type="submit" [disabled]="!registerForm.valid">Register</button>
     </div>
   </form>
 </div>

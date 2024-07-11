@@ -2,9 +2,9 @@
   <nav>
     <ul>
       <li><a [routerLink]="['/homepage']">Home</a></li>
-      <li><a [routerLink]="['/dashboard']">Dashboard</a></li>
-      <li><a [routerLink]="['/settings']">Impostazioni</a></li>
       @if (authService.currentUserSource()) {
+        <li><a [routerLink]="['/dashboard']">Dashboard</a></li>
+        <li><a [routerLink]="['/settings']">Impostazioni</a></li>
         <li><a (click)="logout()">Logout</a></li>
       } @else {
         <li><a [routerLink]="['/register']">Registrati</a></li>

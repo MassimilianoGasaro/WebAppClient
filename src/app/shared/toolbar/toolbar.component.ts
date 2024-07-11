@@ -1,5 +1,5 @@
-import { Component, OutputEmitterRef, inject, output } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -10,10 +10,12 @@ import { AuthService } from '../../services/auth.service';
   styleUrl: './toolbar.component.css'
 })
 export class ToolbarComponent {
-
   authService = inject(AuthService);
+
+  constructor(private router: Router) {}
 
   logout() {
     this.authService.logout();
+    this.router.navigate(["login"]);
   }
 }

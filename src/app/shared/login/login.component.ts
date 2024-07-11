@@ -51,6 +51,7 @@ export class LoginComponent {
 
   cancel() {
     this.loginForm.reset();
+    this.router.navigate(["homepage"]);
   }
 
   onSubmit() {
@@ -65,7 +66,7 @@ export class LoginComponent {
   private login(model: LoginDto) {
     this.authService.login(model).subscribe({
       next: (user: UserLogin) => {
-        this.router.navigate(["/homepage"]);
+        this.router.navigate(["homepage"]);
       },
       error: err => {
         console.error(err);
