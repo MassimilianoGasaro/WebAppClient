@@ -5,4 +5,5 @@ export interface Expense {
   cost: number;
   type: string;
   currency: string;
+  when: string;
 }

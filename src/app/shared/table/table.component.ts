@@ -13,6 +13,6 @@ export class TableComponent implements OnInit {
   expenses: InputSignal<Array<Expense>> = input<Array<Expense>>([], {alias: 'dataTable'});
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+
   }
 }

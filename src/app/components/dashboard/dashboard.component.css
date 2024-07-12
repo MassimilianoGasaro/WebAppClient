@@ -1,10 +1,7 @@
 .table-container {
-  margin: 0 auto;
-  padding: 20px;
-  max-width: 1200px;
   background-color: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
+  padding: 20px;
 }
 
 .icon-list {
@@ -16,11 +13,19 @@
   display: inline-block;
 }
 
+.icon-list > :not(:last-child) {
+  margin: 0 20px 0 0;
+}
+
+.icon-list > li:hover {
+  cursor: pointer;
+}
+
 .icon-list > li > mat-icon {
   height: 50px;
   width: 50px;
   font-size: 48px;
-  color: #009879;
+  color: #ff3d00;;
 }
 
 

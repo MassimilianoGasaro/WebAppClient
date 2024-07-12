@@ -1,12 +1,9 @@
 .toolbar nav {
   text-align: center;
   line-height: 50px;
-  background-color: #c7d5d6;
-  opacity: 0.6;
-  position: fixed;
-  top: 0;
-  left: 0;
+  font-weight: 600;
   width: 100%;
+  margin: 0 auto;
 }
 
 .toolbar li {
@@ -23,4 +20,5 @@
 .toolbar li a:hover{
   cursor: pointer;
   text-decoration: underline;
+  color: var(--main-primary-color);
 }

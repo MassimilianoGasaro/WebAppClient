@@ -1,11 +1,11 @@
-<section class="dashboard table-container top-50">
+<section class="dashboard table-container">
   <div class="table-navbar">
     <ul class="icon-list">
-      <li><mat-icon fontIcon="remove"></mat-icon></li>
-      <li><mat-icon fontIcon="create"></mat-icon></li>
+      <li (click)="onRemoveRecord()"><mat-icon fontIcon="remove"></mat-icon></li>
+      <li (click)="onUpdateRecord()"><mat-icon fontIcon="create"></mat-icon></li>
       <li><mat-icon fontIcon="clear"></mat-icon></li>
       <li><mat-icon fontIcon="save"></mat-icon></li>
-      <li><mat-icon fontIcon="add"></mat-icon></li>
+      <li (click)="onAddRecord()"><mat-icon fontIcon="add"></mat-icon></li>
     </ul>
   </div>
   <app-table [dataTable]="expensesList"></app-table>

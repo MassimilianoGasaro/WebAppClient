@@ -7,7 +7,7 @@
 }
 
 .styled-table thead tr {
-  background-color: #009879;
+  background-color: var(--main-primary-color);
   color: #ffffff;
   text-align: center;
   font-weight: bold;
@@ -23,14 +23,14 @@
 }
 
 .styled-table tbody tr:nth-of-type(even) {
-  background-color: #f3f3f3;
+  background-color: var(--main-bg-color);
 }
 
 .styled-table tbody tr:last-of-type {
-  border-bottom: 2px solid #009879;
+  border-bottom: 2px solid var(--main-primary-color);
 }
 
 .styled-table tbody tr.active-row {
   font-weight: bold;
-  color: #009879;
+  color: var(--main-primary-color);
 }

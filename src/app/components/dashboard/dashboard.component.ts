@@ -21,7 +21,41 @@ export class DashboardComponent implements OnInit {
   public expensesList: Array<Expense> = [];
 
   ngOnInit(): void {
+    this.expensesList =  [
+      {
+      id: 1,
+      name: "GELATO",
+      where: "torino",
+      cost: 3,
+      type: "svago",
+      currency: "euro",
+      when: ""
+    },
+    {
+      id: 2,
+      name: "GELATO",
+      where: "torino",
+      cost: 3,
+      type: "svago",
+      currency: "euro",
+      when: ""
+    }
+  ];
   }
+
+  public onAddRecord() {
+    console.log("ADD");
+  }
+
+  public onUpdateRecord() {
+    console.log("UPDATE");
+  }
+
+  public onRemoveRecord() {
+    console.log("REMOVE");
+  }
+
+  // PRIVATE METHODS
 
   private getExpensesData() {
     this.apiService.get("").subscribe({
