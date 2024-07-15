@@ -9,3 +9,6 @@ Thu, Jul 11, 2024 9:31 AM
 * mostrare nella toolbar il nome dell'utente con menu dropdown
 * migliorare grafica di login e register
 * portare in https il client
+* aumentare letter spacing nel register e login
+* creare popup per dashboard
+* creare una homepage

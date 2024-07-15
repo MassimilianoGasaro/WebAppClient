@@ -20,6 +20,6 @@ export const appConfig: ApplicationConfig = {
       preventDuplicates: true,
     }),
     provideAnimationsAsync(),
-    { provide: HTTP_INTERCEPTORS, useValue: loaderInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useValue: loaderInterceptor, multi: true }, provideAnimationsAsync(),
   ]
 };

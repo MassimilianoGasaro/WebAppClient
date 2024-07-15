@@ -1,0 +1,31 @@
+.table-container {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.icon-list {
+  text-align: end;
+  list-style: none;
+}
+
+.icon-list > li {
+  display: inline-block;
+}
+
+.icon-list > :not(:last-child) {
+  margin: 0 20px 0 0;
+}
+
+.icon-list > li:hover {
+  cursor: pointer;
+}
+
+.icon-list > li > mat-icon {
+  height: 50px;
+  width: 50px;
+  font-size: 48px;
+  color: #ff3d00;;
+}
+
+
