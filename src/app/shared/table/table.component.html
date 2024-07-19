@@ -6,6 +6,7 @@
             <th>Tipo</th>
             <th>Costo</th>
             <th>Data</th>
+            <th>Azioni</th>
         </tr>
     </thead>
     <tbody>
@@ -16,6 +17,12 @@
             <td>{{ expense.type }}</td>
             <td>{{ expense.cost }}</td>
             <td>{{ expense.when }}</td>
+            <td>
+              <ul class="icon-list">
+                <li (click)="onRemoveRecord(expense.id)"><mat-icon fontIcon="remove"></mat-icon></li>
+                <li (click)="onUpdateRecord(expense.id)"><mat-icon fontIcon="create"></mat-icon></li>
+              </ul>
+            </td>
           </tr>
         }
     </tbody>

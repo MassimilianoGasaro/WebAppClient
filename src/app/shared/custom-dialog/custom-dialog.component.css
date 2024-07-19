@@ -1,0 +1,42 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 4px 4px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1em;
+  margin: 1.5em 0;
+}
+
+.buttons > button {
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: none;
+  font-size: 18px;
+}
+
+.buttons > .cancel {
+  color: var(--main-primary-text-color);
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.buttons > .confirm {
+  background-color: var(--main-primary-color);
+  color: var(--main-primary-text-color);
+}
+
+.buttons > button:hover {
+  cursor: pointer;
+}
+
+.buttons > button:disabled {
+  cursor: default;
+  opacity: 0.6;
+}

@@ -1,1 +1,56 @@
-<p>custom-dialog works!</p>
+@if (view === 1 || view === 2) {
+  <div class="insert-form">
+    <form class="form" [formGroup]="insertForm" (ngSubmit)="onSubmit()">
+      <mat-form-field>
+        <mat-label>Nome</mat-label>
+        <input matInput formControlName="name">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Costo</mat-label>
+        <input matInput type="number" formControlName="cost">
+        <div *ngIf="insertForm.controls['cost'].invalid && (insertForm.controls['cost'].dirty || insertForm.controls['cost'].touched)">
+          <small *ngIf="insertForm.controls['cost'].errors?.['pattern']">Must be a number.</small>
+        </div>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Luogo</mat-label>
+        <input matInput formControlName="where">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Scegli una data</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="date">
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Tipologia</mat-label>
+        <mat-select name="type" formControlName="type">
+          @for (type of typologies; track $index) {
+            <mat-option [value]="type">{{type}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Valuta</mat-label>
+        <mat-select name="currency" formControlName="currency">
+          @for (currency of currencies; track $index) {
+            <mat-option [value]="currency">{{currency}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <div class="buttons">
+        <button class="confirm" type="submit" [disabled]="!insertForm.valid">Salva</button>
+      </div>
+    </form>
+  </div>
+} @else {
+  <mat-dialog-content>Vuoi eliminare questo record? {{data.name}}</mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button mat-dialog-close>Close</button>
+    <button mat-button mat-dialog-close cdkFocusInitial>Ok</button>
+  </mat-dialog-actions>
+  <!-- <button mat-button (click)="onNoClick()">No</button>
+  <button mat-button [mat-dialog-close]="animal()" cdkFocusInitial>Ok</button> -->
+}
+
+
