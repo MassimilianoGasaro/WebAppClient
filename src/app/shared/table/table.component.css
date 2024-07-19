@@ -34,3 +34,26 @@
   font-weight: bold;
   color: var(--main-primary-color);
 }
+
+.icon-list {
+  text-align: center;
+  list-style: none;
+}
+
+.icon-list > li {
+  display: inline-block;
+}
+
+.icon-list > :not(:last-child) {
+  margin: 0 20px 0 0;
+}
+
+.icon-list > li:hover {
+  cursor: pointer;
+}
+
+.icon-list > li > mat-icon {
+  height: 50px;
+  width: 50px;
+  font-size: 36px;
+}

@@ -7,6 +7,7 @@ import { loaderInterceptor } from './interceptor/loader.interceptor';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideToastr } from 'ngx-toastr';
+import { provideNativeDateAdapter } from '@angular/material/core';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -19,6 +20,7 @@ export const appConfig: ApplicationConfig = {
       positionClass: 'toast-top-right',
       preventDuplicates: true,
     }),
+    provideNativeDateAdapter(),
     provideAnimationsAsync(),
     { provide: HTTP_INTERCEPTORS, useValue: loaderInterceptor, multi: true }, provideAnimationsAsync(),
   ]
