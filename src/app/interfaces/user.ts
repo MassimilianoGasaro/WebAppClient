@@ -10,6 +10,7 @@ export type User = {
 }
 
 export type UserLogin = {
+  Id: number;
   userName: string;
   token: string;
 }

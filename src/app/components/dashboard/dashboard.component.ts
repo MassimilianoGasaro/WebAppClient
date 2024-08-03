@@ -29,18 +29,20 @@ export class DashboardComponent implements OnInit {
         name: "GELATO",
         where: "torino",
         cost: 3,
-        type: "svago",
+        typeId: 1,
         currency: "euro",
-        when: ""
+        date: "",
+        userId: 1
       },
       {
         id: 2,
         name: "GELATO",
         where: "torino",
         cost: 3,
-        type: "svago",
+        typeId: 1,
         currency: "euro",
-        when: ""
+        date: "",
+        userId: 1
       }
     ];
   }
@@ -66,8 +68,8 @@ export class DashboardComponent implements OnInit {
         name: itemUpdate[0].name,
         where: itemUpdate[0].where,
         cost: itemUpdate[0].cost,
-        type: itemUpdate[0].type,
-        date: itemUpdate[0].when,
+        type: itemUpdate[0].typeId,
+        date: itemUpdate[0].date,
         currency: itemUpdate[0].currency
       }
     }
