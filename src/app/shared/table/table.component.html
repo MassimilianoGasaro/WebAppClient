@@ -14,9 +14,9 @@
           <tr [class.active-row]="$index % 2 !== 0">
             <td>{{ expense.name }}</td>
             <td>{{ expense.where }}</td>
-            <td>{{ expense.type }}</td>
+            <td>{{ expense.typeId }}</td>
             <td>{{ expense.cost }}</td>
-            <td>{{ expense.when }}</td>
+            <td>{{ expense.date }}</td>
             <td>
               <ul class="icon-list">
                 <li (click)="onRemoveRecord(expense.id)"><mat-icon fontIcon="remove"></mat-icon></li>
