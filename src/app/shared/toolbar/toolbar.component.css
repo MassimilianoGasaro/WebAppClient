@@ -22,3 +22,7 @@
   text-decoration: underline;
   color: var(--main-primary-color);
 }
+
+.toolbar ul li .active {
+  text-decoration: underline;
+}

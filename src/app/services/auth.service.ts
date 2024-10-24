@@ -45,6 +45,11 @@ export class AuthService {
 
   // PRIVATE METHODS
 
+  /**
+   * Crea la chiave user nel localStorage con id, username e token
+   * @param user
+   * @returns void
+   */
   private setCurrentUser(user: UserLogin) {
     localStorage.setItem("user", JSON.stringify(user));
     this.currentUserSource.set(user);

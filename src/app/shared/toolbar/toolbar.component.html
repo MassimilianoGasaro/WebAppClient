@@ -1,14 +1,14 @@
 <div class="toolbar">
   <nav>
     <ul>
-      <li><a [routerLink]="['/homepage']">Home</a></li>
+      <li><a [routerLink]="['/homepage']" routerLinkActive="active">Home</a></li>
       @if (authService.currentUserSource()) {
-        <li><a [routerLink]="['/dashboard']">Dashboard</a></li>
-        <li><a [routerLink]="['/settings']">Impostazioni</a></li>
+        <li><a [routerLink]="['/dashboard']" routerLinkActive="active">Dashboard</a></li>
+        <li><a [routerLink]="['/settings']" routerLinkActive="active">Impostazioni</a></li>
         <li><a (click)="logout()">Logout</a></li>
       } @else {
-        <li><a [routerLink]="['/register']">Registrati</a></li>
-        <li><a [routerLink]="['/login']">Accedi</a></li>
+        <li><a [routerLink]="['/register']" routerLinkActive="active">Registrati</a></li>
+        <li><a [routerLink]="['/login']" routerLinkActive="active">Accedi</a></li>
       }
     </ul>
   </nav>
