@@ -3,6 +3,8 @@
   --main-bg-color: #f5f5f5;
   --main-primary-text-color: #fff;
   --main-primary-color: #ff3d00;
+  --button-add-color: #5abe83;
+  --table-main-color: rgba(0, 0, 0, 0.3);
 }
 
 * {

@@ -7,8 +7,8 @@
 }
 
 .styled-table thead tr {
-  background-color: var(--main-primary-color);
-  color: #ffffff;
+  background-color: var(--table-main-color);
+  color: var(--main-primary-text-color);
   text-align: center;
   font-weight: bold;
 }
@@ -19,15 +19,20 @@
 }
 
 .styled-table tbody tr {
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid var(--main-bg-color);
 }
 
-.styled-table tbody tr:nth-of-type(even) {
+.styled-table tbody tr:hover {
+  /* cursor: pointer; */
   background-color: var(--main-bg-color);
 }
 
+/* .styled-table tbody tr:nth-of-type(even) {
+  background-color: var(--main-bg-color);
+} */
+
 .styled-table tbody tr:last-of-type {
-  border-bottom: 2px solid var(--main-primary-color);
+  border-bottom: 2px solid var(--table-main-color);
 }
 
 .styled-table tbody tr.active-row {
@@ -52,8 +57,4 @@
   cursor: pointer;
 }
 
-.icon-list > li > mat-icon {
-  height: 50px;
-  width: 50px;
-  font-size: 36px;
-}
+

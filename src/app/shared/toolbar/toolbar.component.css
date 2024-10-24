@@ -17,12 +17,11 @@
   text-decoration: none;
 }
 
-.toolbar li a:hover{
-  cursor: pointer;
+.toolbar li a:hover, .toolbar ul li .active{
   text-decoration: underline;
   color: var(--main-primary-color);
 }
 
-.toolbar ul li .active {
-  text-decoration: underline;
+.toolbar li a:hover {
+  cursor: pointer;
 }

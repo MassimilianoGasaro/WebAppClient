@@ -11,7 +11,8 @@
     </thead>
     <tbody>
         @for (expense of expenses(); track expense.id) {
-          <tr [class.active-row]="$index % 2 !== 0">
+          <!-- [class.active-row]="$index % 2 !== 0" -->
+          <tr >
             <td>{{ expense.name }}</td>
             <td>{{ expense.where }}</td>
             <td>{{ expense.typeId }}</td>
@@ -19,7 +20,7 @@
             <td>{{ expense.date }}</td>
             <td>
               <ul class="icon-list">
-                <li (click)="onRemoveRecord(expense.id)"><mat-icon fontIcon="remove"></mat-icon></li>
+                <li (click)="onRemoveRecord(expense.id)"><mat-icon fontIcon="delete_forever"></mat-icon></li>
                 <li (click)="onUpdateRecord(expense.id)"><mat-icon fontIcon="create"></mat-icon></li>
               </ul>
             </td>

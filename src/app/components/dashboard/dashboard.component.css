@@ -1,10 +1,18 @@
 .icon-list {
-  text-align: end;
+  display: flex;
+  justify-content: flex-end;
   list-style: none;
 }
 
 .icon-list > li {
-  display: inline-block;
+  flex: none;
+  display: flex;
+  align-items: center;
+  background-color: var(--button-add-color);
+  color: var(--main-primary-text-color);
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+  transition: background-color 1s 50ms;
 }
 
 .icon-list > :not(:last-child) {
@@ -13,13 +21,14 @@
 
 .icon-list > li:hover {
   cursor: pointer;
+  background-color: var(--main-primary-color)
 }
 
 .icon-list > li > mat-icon {
-  height: 50px;
+  /* height: 50px;
   width: 50px;
   font-size: 48px;
-  color: #ff3d00;;
+  color: var(--main-primary-color); */
 }
 
 
